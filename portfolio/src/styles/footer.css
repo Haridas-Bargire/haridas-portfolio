@@ -1,0 +1,7 @@
+.footer {
+  padding: 24px 0;
+  background: var(--dark-deep);
+  border-top: 1px solid rgba(104, 239, 63, 0.18);
+  color: var(--on-dark-muted);
+  font-size: 0.95rem;
+}

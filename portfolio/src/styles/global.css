@@ -1,0 +1,226 @@
+/* Design tokens: change colours and fonts here. */
+:root {
+  --dark: #122314;
+  --dark-soft: #1b3320;
+  --dark-deep: #0b160c;
+  --lime: #68ef3f;
+  --lime-hover: #8af56a;
+  --green: #2f9e17;
+  --green-text: #1d5a12;
+  --lime-tint: #e9fbe3;
+  --page: #ffffff;
+  --tint: #f3f7f2;
+  --surface: #ffffff;
+  --text: #1c2a1e;
+  --muted: #526355;
+  --line: #dbe5d8;
+  --on-dark: #d6e3d4;
+  --on-dark-muted: #a9bba7;
+
+  --shadow-lift: 0 14px 30px rgba(18, 35, 20, 0.16);
+  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius: 12px;
+  --max-width: 1080px;
+  --nav-height: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+.navbar :focus-visible,
+.hero :focus-visible,
+.section--dark :focus-visible {
+  outline-color: var(--lime);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sections */
+.section {
+  padding: 64px 0;
+}
+.section--light {
+  background: var(--page);
+}
+.section--tint {
+  background: var(--tint);
+}
+.section--dark {
+  background: var(--dark);
+  color: #fff;
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: var(--dark);
+}
+.section--dark .section__title {
+  color: #fff;
+}
+.section__icon {
+  color: var(--green);
+  flex-shrink: 0;
+}
+.section--dark .section__icon {
+  color: var(--lime);
+}
+
+/* Shared pieces */
+.bullets {
+  display: grid;
+  gap: 10px;
+}
+.bullets li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text);
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 2px var(--dark);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips li {
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--green-text);
+  background: var(--lime-tint);
+  border: 1px solid #c9efbd;
+  border-radius: 999px;
+  transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+}
+.chips li:hover {
+  transform: translateY(-3px);
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--dark);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
+}
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.btn--primary {
+  background: var(--lime);
+  color: var(--dark);
+}
+.btn--primary:hover {
+  background: var(--lime-hover);
+}
+.btn--ghost {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+.btn--ghost:hover {
+  border-color: var(--lime);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+  .section {
+    padding: 88px 0;
+  }
+  .section__title {
+    font-size: 2rem;
+  }
+}
+
+/* Turn off hover movement for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+  *:hover {
+    transform: none !important;
+  }
+}

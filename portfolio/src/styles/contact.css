@@ -1,0 +1,47 @@
+.contact__lead {
+  max-width: 56ch;
+  margin-bottom: 28px;
+  color: var(--on-dark);
+}
+.contact {
+  display: grid;
+  gap: 14px;
+}
+.contact__card {
+  display: grid;
+  gap: 4px;
+  padding: 20px;
+  text-decoration: none;
+  background: var(--dark-soft);
+  border: 1px solid rgba(104, 239, 63, 0.2);
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.contact__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--lime);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
+}
+.contact__card svg {
+  color: var(--lime);
+  margin-bottom: 6px;
+}
+.contact__label {
+  font-size: 0.9rem;
+  color: var(--on-dark-muted);
+}
+.contact__value {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 640px) {
+  .contact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .contact {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

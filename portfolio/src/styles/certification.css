@@ -1,0 +1,34 @@
+.certs {
+  display: grid;
+  gap: 16px;
+}
+.cert {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.cert:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--lime);
+}
+.cert__icon {
+  flex-shrink: 0;
+  box-sizing: content-box;
+  padding: 10px;
+  color: var(--lime);
+  background: var(--dark);
+  border-radius: 10px;
+}
+.cert h3 {
+  font-size: 1.15rem;
+  color: var(--dark);
+}
+.cert p {
+  color: var(--muted);
+}

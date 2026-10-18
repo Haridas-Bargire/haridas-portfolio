@@ -1,0 +1,43 @@
+.skills {
+  display: grid;
+  gap: 16px;
+}
+.skill-group {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.skill-group:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--lime);
+}
+.skill-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+.skill-group h3 svg {
+  flex-shrink: 0;
+  box-sizing: content-box;
+  padding: 6px;
+  color: var(--lime);
+  background: var(--dark);
+  border-radius: 8px;
+}
+
+@media (min-width: 640px) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
